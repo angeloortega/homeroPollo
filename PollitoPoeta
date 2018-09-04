@@ -1,0 +1,158 @@
+
+;Diccionario
+(define (diccionario) '((x-men (s)) (xilófono (s)) (xenófobo (j)) (xenofobia (s)) (xerógrafo (s)) (xilofonista (s)) (xerocopia (s)) (xifoides (s)) (xifoideo (j)) (xinca (j)) (xóchil (s)) (xecudo (j)) (xecuda (j)) (xecudas (j)) (xecudos (j)) (xantoma (s)) (xenón (s)) (xilema (s)) (xeroftalmia (s)) (xerografiar (v (xerografié xerografiaste xerografió xerografiamos xerografiaron xerografiaron xerografio xerografias xerografia xerografiamos xerografian xerografian xerografiaré xerografiarás xerografiará xerografiaremps xerografiarán xerografiarán)))
+(versus (o)) (vía (o)) (vaca (s)) (volcán (s)) (vacas (s)) (vocal (s)) (vino (s)) (volcanes (s)) (viento (s)) (vacuna (s)) (vinos (s)) (vueltas (s)) (voltaje (s)) (vista (s)) (violeta (j)) (vara (s)) (vaina (s)) (vela (s)) (varas (s)) (virus (s)) (voltereta (s)) (valiente (j)) (veloz (j)) (voráz (j)) (volátil (j)) (veloces (j)) (viejo (j)) (viscoso (j)) (vieja (j)) (viejas (j)) (viejos (j)) (virulento (j)) (viejos (j)) (vegetal (s)) (vago (j)) (vulgar (j)) (vampiro (s)) (viajeros (s)) (vida (s)) (vital (j)) (vitales (j)) (verdad (s)) (verdaderamente (d)) (verde (j)) (vivienda (s)) (vencidas (j)) (volumen (s)) (viaje (s)) (valija (s)) (viajera (s)) (verdadero (j)) (velozmente (d)) (vagamente (d)) (valientemente (d)) (vulgarmente (d)) (vencidos (j)) (viñeta (s)) (vilmente (d)) (viajeras (s)) (ventana (s)) (vencida (j))(ventoso (j)) (venta (s)) (valor (s)) (villano (s)) (vínculos (s)) (villana (s)) (villanos (s)) (víbora (s)) (viajero (s)) (voz (s)) (vibrante (j)) (viñedo (s)) (vínculo (s)) (vencido (j)) (vaso (s)) (vecino (s)) (vecina (s)) (vecinos (s)) (vecinas (s)) (venganza (s)) (verano (s)) (vergonzoso (j)) (veterano (s)) (victoria (s)) (violento (j)) (vital (j)) (vulnerable (j)) (vaina (s)) (vapor (s)) (vegetariano (j)) (vasija (s)) (vivir (v (viví viviste vivió vivimos vivieron  vivieron vivo vives vive vivimos vivieron viven viviré vivirás vivirá viviremos vivirán vivirán))) (volar (v (valoré valoraste valoró valoramos valoraron valoraron valoro valoras valora valoramos valoran valoran valoraré valorarás valorará valoraremos valorarán valorarán))) (vegetar (v (vegeté vegetaste vegetó vegetamos vegetaron vegetaron vegeto vegetas vegeta vegetamos vegetan vegetan vegetaré vegetarán vegetará vegetaremos vegetarán vegetarán ))) (vagabundear (v (vagabundeé vagabundeaste vagabundeó vagabundeamos vagabundeastearon vagabundearon vagabundeo vagabundeas vagabundea vagabundeamos vagabundean vagabundean vagabundearé vagabundearás vagabundeará vagabundearemos vagabundearán vagabundearán))) (vender (v (vendí vendiste vendió vendimos vendieron vendieron  vendo vendes vende vendemos venden venden venderé venderás venderá venderemos venderán venderán))) (vencer (v (vencí venciste venció vencimos vencieron vencieron vencieron venzo vences vence vencemos vences vencen venceré vencerás vencerá venceremos vencerán vencerán))) (vigilar (v (vigilé vigilaste vigiló  vigilamos vigilaron vigilaron vigilo vigilas vigila vigilamos vigilan vigilan vigilaré vigilarás vigilará vigilaremos vigilarán vigilarán))) (vestir (v (vestí vestiste vistió vestimos  vistierno vistieron visto vistes viste vestimos visten visten vestiré vestirás vestirá vestiremos vestirán vestirán)))
+(según (o)) (sin (o)) (sobre (o)) (silla (s)) (sol (s)) (sartén (s)) (salida (s)) (salidas (s)) (sierra (s)) (sierras(s)) (sistema (s)) (sistemas (s)) (sudoku (s)) (sermón (s)) (sandía (s)) (sandías (s)) (segundos (s)) (semones (s)) (sal (s)) (sujeto (s)) (sujetos (s)) (serpiente (s)) (silencio (s)) (sardinas (s)) (sirena (s)) (saturno (s)) (serpientes (s)) (susurro (s)) (sala (s)) (sirenas (s)) (salsa (s)) (susto (s)) (suerte (s)) (suplementos (s)) (sonámbulo (s)) (sustitutos (s)) (sentencia (s)) (suertudos (j)) (segundo (j)) (séptimo (j)) (solo (j)) (sola (j)) (suyo (j)) (suya (j)) (suertuda (j)) (solos (j)) (simple (j)) (salado (j)) (sabio (j)) (supuesta (j)) (sana (j)) (simpáticos (j)) (sorda (j)) (solas (j)) (suertudo (j)) (superior (j)) (suyos (j)) (supuesto (j)) (soberbio (j)) (salada (j)) (separado (j)) (suyas (j)) (suave (j)) (suprema (j)) (sordos (j)) (siguiente (j)) (semejante (j)) (satisfecho (j)) (siguientes (j)) (singular (j)) (sigilosos (j)) (supremo (j)) (satisfecha (j)) (soñadora (j)) (súper (j)) (sociable (j)) (solitario (j)) (saludable (j)) (solemne (j)) (siempre (d)) (seguramente (d)) (similar (d)) (sí (d)) (solamente (d)) (sinceramente (d)) (semanalmente (d)) (sorprendentemente (d)) (seguramente (d)) (sencillamente (d)) (simplemente (d)) (supuestamente (d)) (siegamente (d)) (soñar (v (soñé soñaste soñó soñamos soñaron soñaron sueño sueñas sueña soñamos sueñan sueñan soñaré soñarás soñará soñaremos soñarán soñarán))) (ser (v (era eras eran éramos eran eran soy eres es somos son son seré serás será seremos serán serán))) (suplicar (v (supliqué suplicaste suplicó suplicamos suplicaron suplicaron suplico suplicas suplica suplicamos suplican suplican suplicaré suplicarás suplicará suplicaremos suplicarán suplicarán))) (saquear (v (squeé saqueaste saqueó saqueamos saquearon saquearon saqueo squeas saquea saqueamos saquean saquean))) (satisfacer (v (satisfice satisficiste satisfizo satisficimos satisficieton satisficieron satisfago satisfaces satisface satisfacemos satisfacen satisfacen satisfaré satisfarás satisfaremos satisfarán satisfarán))) (sangrar (v (sangré sangraste sangró sangramos sangraron sangraron sangro sangras sangra sangramos sangran sangran sangraré sangrarás sangrará sangraremos sangrarán sangrarán))) (suceder (v (sucedí sucediste sucedió sucedimos	sucedieron sucedieron sucedo sucedes sucede sucedemos suceden suceden sucederé sucederás sucederá sucederemos sucederéis sucederán))) (sugerir (v (sugerí sugeriste sugirió sugerimos sugirieron sugirieron sugiero sugieres sugiere sugerimos sugieren sugieren sugeriré sugerirás sugerirá sugeriremos sugerirán sugerirán)))))
+
+;Funciones para separar en silabas
+
+(define (silabas s)
+    (cond  
+        ((null? s) '())
+        (#t (cons  (proximaSilaba s) (getNewWord s (proximaSilaba s)))
+    )))
+
+(define (getNewWord s silaba)    
+    (silabas (getRest s (string-length silaba))))
+
+
+(define (getRest lst start)
+        (cond 
+            ((null? lst) '())
+            ((zero? start) lst)
+            (#t (getRest (cdr lst) (sub1 start)))))
+            
+
+(define (proximaSilaba s) 
+    (proximaSilabaAux s "" "" 0))
+
+(define (proximaSilabaAux s n t i)
+    (cond
+        ((equal? (length s) i) (string-append n t))
+        ((> i 0) 
+            (cond 
+                (
+                    (or
+                        (and (vocalF? (list-ref s (sub1 i))) (vocalF? (list-ref s i))) 
+                        (and(vocal? (list-ref s (sub1 i))) (vocalDA? (list-ref s i)))
+                    ) 
+                    (string-append n t)
+                )
+
+                ((equal? (length s) (add1 i))
+                 (proximaSilabaAux s n (string-append t (list-ref s i)) (add1 i)))
+
+                (else (checkRest s n t i))
+                ))
+        
+        ((equal? (length s) (add1 i))
+            (proximaSilabaAux s n (string-append t (list-ref s i)) (add1 i)))
+        (else (checkRest s n t i)) 
+        ))
+
+
+(define (checkRest s n t i)
+    (cond
+
+        ((< i 1)
+            (proximaSilabaAux s n (string-append t (list-ref s i)) (add1 i)))
+
+        ((= (contarConsonantes 0 (getRest s i)) 1)
+            (cond 
+                ((vocal? (list-ref s (sub1 i))) t)
+                ((or
+                    (equal? (list-ref s i) "l")
+                    (equal? (list-ref s i) "r")) (proximaSilabaAux s n (string-append t (list-ref s i)) (add1 i))) 
+                (#t t)))
+
+        ((= (contarConsonantes 0 (getRest s i)) 2)
+            (cond
+                ((or 
+                    (equal? (list-ref s (add1 i)) "l")
+                    (equal? (list-ref s (add1 i)) "r")) t)
+                (else (string-append t (list-ref s i)))))
+
+        ((= (contarConsonantes 0 (getRest s i)) 3)
+             (cond
+                ((or 
+                    (equal? (list-ref s (+ i 2)) "l")
+                    (equal? (list-ref s (+ i 2)) "r"))
+                (string-append t (list-ref s i)))
+
+                (else (string-append t (string-append (list-ref s i) (list-ref s (add1 i)))))))
+
+        ((= (contarConsonantes 0 (getRest s i)) 4)(string-append t (string-append (list-ref s i) (list-ref s (add1 i)))))
+
+        (else (proximaSilabaAux s n (string-append t (list-ref s i)) (add1 i)))
+    )
+)
+
+(define (contarConsonantes a l)
+    (cond 
+        ((null? l) a)
+        ((vocal? (car l)) a)
+        (else (contarConsonantes (add1 a) (cdr l)))))
+;funciones de clasificacion de caracteres
+(define (consonante? l) (not (vocal? l)))
+
+(define (vocal? string) (or (vocalF? string) (vocalD? string)))
+
+(define (vocalD? string)
+    (cond
+    ((null? string) #f)
+    ((equal? string "i") #t)
+    ((equal? string "u") #t)
+    (#t #f)))
+
+(define (vocalF? string)
+    (cond
+        ((null? string) #f)
+        ((vocalDA? string) #t)
+        ((equal? string "a") #t)
+        ((equal? string "e") #t)
+        ((equal? string "o") #t)
+        ((equal? string "á") #t)
+        ((equal? string "é") #t)
+        ((equal? string "ó") #t)
+        (#t #f)))
+        
+
+(define (vocalDA? string)
+    (cond
+        ((null? string) #f)
+        ((equal? string "í") #t)
+        ((equal? string "ú") #t)
+        (#t #f)))
+
+(define (vocalY? previous next l)
+    (cond
+        ((vocal? next) #f)
+        ((vocal? previous) 
+            (cond ((equal? "y" l) #t)))
+        (#t #f)))
+
+
+;Funciones de manejo de strings
+
+(define (symbolToString s)
+    (symbol->string s))
+
+(define (stringToList string)
+    (reverse(stringToListAux string (string-length string))))
+
+(define (stringToListAux string size)
+    (cond 
+        ((zero? size) '())
+        ((> (- size 2) -1) (cond 
+                            ((or (equal? (substring string (- size 2) size) '"ll") 
+                                (equal? (substring string (- size 2) size) '"rr")
+                                (equal? (substring string (- size 2) size) '"ch"))
+                                (cons (substring string (- size 2) size) (stringToListAux string (- size 2))))
+                            (else (cons(substring string (sub1 size) size)
+                                (stringToListAux string (sub1 size))))))
+        (else (cons(substring string (sub1 size) size)
+        (stringToListAux string (sub1 size))))))
+
+
+
+
