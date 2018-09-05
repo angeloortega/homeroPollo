@@ -1,5 +1,6 @@
 
 (require-extension utf8)
+(require-extension trace)
 ;Diccionario
 (define (diccionario) '((x-men (s)) (xilófono (s)) (xenófobo (j)) (xenofobia (s)) (xerógrafo (s)) (xilofonista (s)) (xerocopia (s)) (xifoides (s)) (xifoideo (j)) (xinca (j)) (xóchil (s)) (xecudo (j)) (xecuda (j)) (xecudas (j)) (xecudos (j)) (xantoma (s)) (xenón (s)) (xilema (s)) (xeroftalmia (s)) (xerografiar (v (xerografié xerografiaste xerografió xerografiamos xerografiaron xerografiaron xerografio xerografias xerografia xerografiamos xerografian xerografian xerografiaré xerografiarás xerografiará xerografiaremps xerografiarán xerografiarán)))
 (versus (o)) (vía (o)) (vaca (s)) (volcán (s)) (vacas (s)) (vocal (s)) (vino (s)) (volcanes (s)) (viento (s)) (vacuna (s)) (vinos (s)) (vueltas (s)) (voltaje (s)) (vista (s)) (violeta (j)) (vara (s)) (vaina (s)) (vela (s)) (varas (s)) (virus (s)) (voltereta (s)) (valiente (j)) (veloz (j)) (voráz (j)) (volátil (j)) (veloces (j)) (viejo (j)) (viscoso (j)) (vieja (j)) (viejas (j)) (viejos (j)) (virulento (j)) (viejos (j)) (vegetal (s)) (vago (j)) (vulgar (j)) (vampiro (s)) (viajeros (s)) (vida (s)) (vital (j)) (vitales (j)) (verdad (s)) (verdaderamente (d)) (verde (j)) (vivienda (s)) (vencidas (j)) (volumen (s)) (viaje (s)) (valija (s)) (viajera (s)) (verdadero (j)) (velozmente (d)) (vagamente (d)) (valientemente (d)) (vulgarmente (d)) (vencidos (j)) (viñeta (s)) (vilmente (d)) (viajeras (s)) (ventana (s)) (vencida (j))(ventoso (j)) (venta (s)) (valor (s)) (villano (s)) (vínculos (s)) (villana (s)) (villanos (s)) (víbora (s)) (viajero (s)) (voz (s)) (vibrante (j)) (viñedo (s)) (vínculo (s)) (vencido (j)) (vaso (s)) (vecino (s)) (vecina (s)) (vecinos (s)) (vecinas (s)) (venganza (s)) (verano (s)) (vergonzoso (j)) (veterano (s)) (victoria (s)) (violento (j)) (vital (j)) (vulnerable (j)) (vaina (s)) (vapor (s)) (vegetariano (j)) (vasija (s)) (vivir (v (viví viviste vivió vivimos vivieron  vivieron vivo vives vive vivimos vivieron viven viviré vivirás vivirá viviremos vivirán vivirán))) (volar (v (valoré valoraste valoró valoramos valoraron valoraron valoro valoras valora valoramos valoran valoran valoraré valorarás valorará valoraremos valorarán valorarán))) (vegetar (v (vegeté vegetaste vegetó vegetamos vegetaron vegetaron vegeto vegetas vegeta vegetamos vegetan vegetan vegetaré vegetarán vegetará vegetaremos vegetarán vegetarán ))) (vagabundear (v (vagabundeé vagabundeaste vagabundeó vagabundeamos vagabundeastearon vagabundearon vagabundeo vagabundeas vagabundea vagabundeamos vagabundean vagabundean vagabundearé vagabundearás vagabundeará vagabundearemos vagabundearán vagabundearán))) (vender (v (vendí vendiste vendió vendimos vendieron vendieron  vendo vendes vende vendemos venden venden venderé venderás venderá venderemos venderán venderán))) (vencer (v (vencí venciste venció vencimos vencieron vencieron vencieron venzo vences vence vencemos vences vencen venceré vencerás vencerá venceremos vencerán vencerán))) (vigilar (v (vigilé vigilaste vigiló  vigilamos vigilaron vigilaron vigilo vigilas vigila vigilamos vigilan vigilan vigilaré vigilarás vigilará vigilaremos vigilarán vigilarán))) (vestir (v (vestí vestiste vistió vestimos  vistierno vistieron visto vistes viste vestimos visten visten vestiré vestirás vestirá vestiremos vestirán vestirán)))
@@ -161,12 +162,7 @@
     (#t (contains? (cdr lista) cara))
     )
 )
-;Manejo de arreglos
-(define (nth n l)
-    (cond
-        ((null? l) '"")
-        ((zero? n)(car l))
-        (#t (nth (sub1 n)(cdr l)))))
+
 
 ;Funciones de manejo de strings
 
@@ -180,9 +176,9 @@
     (cond 
         ((zero? size) '())
         ((> (- size 2) -1) (cond 
-                            ((or (equal? (substring string (- size 2) size) '"ll") 
-                                (equal? (substring string (- size 2) size) '"rr")
-                                (equal? (substring string (- size 2) size) '"ch"))
+                            ((or (equal? (substring string (- size 2) size) "ll") 
+                                (equal? (substring string (- size 2) size) "rr")
+                                (equal? (substring string (- size 2) size) "ch"))
                                 (cons (substring string (- size 2) size) (stringToListAux string (- size 2))))
                             (else (cons(substring string (sub1 size) size)
                                 (stringToListAux string (sub1 size))))))
@@ -213,17 +209,17 @@
         ))
 
 (define (sEsdruj? sil)
-(tilde?(nth 3 (reverse sil)))) 
+(tilde?(list-ref (reverse sil) 3))) 
 
 ;suponiendo que no es sobreesdrujula
 (define (esdruj? sil)
-(tilde?(nth 2 (reverse sil))))
+(tilde?(list-ref (reverse sil) 2)))
 
 ;suponiendo que no es esdrujula
 (define (grave? sil)
     (cond
-    ((tilde?(nth 1 (reverse sil)))#t)
-    ((nOs? (reverse(stringToList (nth 0 (reverse sil))))) #t)
+    ((tilde?(list-ref (reverse sil) 1))#t)
+    ((nOs? (reverse(stringToList (list-ref (reverse sil) 0)))) #t)
     (#t #f)
     ))
 
@@ -234,5 +230,68 @@
         ((equal? (car s) "s")#t)
         ((equal? (car s) "N")#t)
         ((equal? (car s) "S")#t)
+        ((vocal? (car s))#t)
         (#t #f)
     ))
+
+;Chequeo de rimas
+(define (getToSize l size)
+    (cond
+        ((null? l) '())
+        ((> size (length l)) l)
+        ((= size (length l)) l)
+        (#t (getToSize (cdr l)  size))
+        ))
+
+(define (rConsonante? s1 s2)
+    (cond 
+        ((null? s1)#f)
+        ((equal?(sTonica s1) (sTonica s2))
+            (igualSinExcepciones (getToSize s1 (add1 (sTonica  s1))) (getToSize s2 (add1 (sTonica s2)))))
+        (#t #f))
+    )
+
+(define (igualSinExcepciones s1 s2)
+    (cond
+        ((equal? (length s1) (length s2))
+        (cond
+            (
+            (equal? 
+            (substring (car s1) (sub1 (string-length (car s1))) (string-length (car s1))) 
+            (substring (car s2) (sub1 (string-length (car s2))) (string-length (car s2))))
+            (igualSinExcepcionesAux (cdr s1) (cdr s2)))
+        (#t #f)))
+    (#t #f)))
+
+(define (igualSinExcepcionesAux s1 s2)
+    (cond
+        ((null? s1)#t)
+        ((equal? (car s1) (car s2)) (igualSinExcepcionesAux (cdr s1) (cdr s2)))
+        ((jgnz? (car s1) (car s2)) (igualSinExcepcionesAux (cdr s1) (cdr s2)))
+        (#t #f)   
+        ))
+
+(define (jgnz? s1 s2)
+    (cond
+        ((>(string-length s1)1)
+            (cond
+            ((or(equal? (substring s1 0 2) "je") (equal? (substring s1 0 2) "ge")) (or(equal? (substring s2 0 2) "je") (equal? (substring s2 0 2) "ge")))
+            ((or(equal? (substring s1 0 2) "ji") (equal? (substring s1 0 2) "gi")) (or(equal? (substring s2 0 2) "ji") (equal? (substring s2 0 2) "gi")))
+            ((or(equal? (substring s1 0 2) "sa") (equal? (substring s1 0 2) "za")) (or(equal? (substring s2 0 2) "sa") (equal? (substring s2 0 2) "za")))
+            ((or(equal? (substring s1 0 2) "se") (equal? (substring s1 0 2) "ce")) (or(equal? (substring s2 0 2) "ce") (equal? (substring s2 0 2) "se")))
+            ((or(equal? (substring s1 0 2) "jé") (equal? (substring s1 0 2) "gé")) (or(equal? (substring s2 0 2) "jé") (equal? (substring s2 0 2) "gé")))
+            ((or(equal? (substring s1 0 2) "jí") (equal? (substring s1 0 2) "gí")) (or(equal? (substring s2 0 2) "jí") (equal? (substring s2 0 2) "gí")))
+            ((or(equal? (substring s1 0 2) "sé") (equal? (substring s1 0 2) "cé")) (or(equal? (substring s2 0 2) "cé") (equal? (substring s2 0 2) "sé")))))
+        ((>(string-length s1)2)
+            (cond
+            ((>(string-length s2)1)
+                (cond
+            ((equal? (substring s1 0 3) "lla") (equal? (substring s2 0 2) "ya"))
+            ))))
+        ((>(string-length s2)2)
+            (cond
+            ((>(string-length s1)1)
+                (cond
+                ((equal? (substring s2 0 3) "lla") (equal? (substring s1 0 2) "ya"))
+            ))))
+        (#t #f)))
