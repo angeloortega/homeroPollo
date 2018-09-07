@@ -163,7 +163,18 @@
     )
 )
 
+(define (soloVocales lista final)
+    (cond
+        ((null? lista) final)
+        (#t  (soloVocales (cdr lista) (string-append final (soloVocalesAux (stringToList (car lista)) ""))))
+        ))
 
+(define (soloVocalesAux str final) 
+    (cond
+        ((null? str) final)
+        ((vocal? (car str))  (soloVocalesAux (cdr str) (string-append final (car str))))
+        (#t (soloVocalesAux (cdr str) final))
+        ))
 ;Funciones de manejo de strings
 
 (define (symbolToString s)
@@ -186,6 +197,9 @@
         (stringToListAux string (sub1 size))))))
 
 ;Funciones para determinar la silaba tonica
+
+(define (desdeTonica l)
+    (getToSize l (add1 (sTonica l))))
 
 (define (sTonica l)
     (cond
@@ -246,10 +260,17 @@
 (define (rConsonante? s1 s2)
     (cond 
         ((null? s1)#f)
-        ((equal?(sTonica s1) (sTonica s2))
-            (igualSinExcepciones (getToSize s1 (add1 (sTonica  s1))) (getToSize s2 (add1 (sTonica s2)))))
+        ((equal? (sTonica s1) (sTonica s2))
+            (igualSinExcepciones (desdeTonica s1) (desdeTonica s2)))
         (#t #f))
     )
+
+(define (rAsonante? s1 s2)
+    (cond
+        ((null? s1) #f)
+        ((equal?(sTonica s1) (sTonica s2)) (equal? (soloVocales (desdeTonica s1) "") (soloVocales (desdeTonica s2) "")))
+        (#t #f)
+    ))
 
 (define (igualSinExcepciones s1 s2)
     (cond
@@ -295,3 +316,5 @@
                 ((equal? (substring s2 0 3) "lla") (equal? (substring s1 0 2) "ya"))
             ))))
         (#t #f)))
+
+
